@@ -32,6 +32,8 @@ $primary-icon-color: invert(93%) sepia(15%) saturate(229%) hue-rotate(353deg)
 $secondary-icon-color: invert(13%) sepia(11%) saturate(4579%) hue-rotate(200deg)
   brightness(89%) contrast(83%);
 
+$card-effect: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
 @mixin navbar-hover {
   background-color: $tertiary-bg-color;
   color: $tertiary-text-color;
@@ -107,7 +109,7 @@ button {
 }
 
 h2 {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 li {
@@ -136,7 +138,7 @@ button {
 }
 
 .section {
-  padding-top: 49px;
+  padding-top: 57px;
 }
 
 .header {
@@ -168,7 +170,7 @@ button {
 }
 
 .hero {
-  height: calc(100vh - 49px);
+  height: calc(100vh - 57px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,12 +215,14 @@ button {
         height: 100%;
         width: 100%;
         display: block;
+        box-shadow: $card-effect;
       }
     }
 
     .project-details {
       background-color: $secondary-bg-color;
       padding: 20px;
+      box-shadow: $card-effect;
 
       .project-title {
         font-size: 2rem;
@@ -323,5 +327,111 @@ button {
         height: 1.25rem;
       }
     }
+  }
+}
+
+@media screen and (max-width: 923px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .section,
+  .hero {
+    padding: 0 30px;
+  }
+
+  .section {
+    padding-top: 54px;
+  }
+
+  h2 {
+    margin: 15px 0;
+  }
+
+  .hero {
+    height: calc(100vh - 54px);
+    gap: 15px;
+
+    h1,
+    .subtitle {
+      font-size: 2rem;
+    }
+  }
+
+  .about-text {
+    gap: 10px;
+  }
+
+  .projects {
+    gap: 30px;
+
+    .project {
+      display: flex;
+      flex-direction: column;
+
+      .project-image {
+        img {
+          height: 100%;
+          width: 100%;
+          display: block;
+        }
+      }
+
+      .project-details {
+        padding: 20px;
+
+        .project-title {
+          font-size: 1.5rem;
+        }
+
+        .project-info {
+          .project-links {
+            .project-link {
+              .icon {
+                height: 1.25rem;
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(odd) {
+        .project-image {
+          order: 0;
+        }
+      }
+    }
+  }
+
+  .contact {
+    .form-container {
+      .contact-form {
+        .form-section {
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .contact-link-bar {
+      .contact-link {
+        .icon {
+          height: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+
+  a,
+  button {
+    padding: 8px 15px;
   }
 }
