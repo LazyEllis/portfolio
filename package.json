@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@principalstudio/html-webpack-inject-preload": "^1.2.7",
     "css-loader": "^6.8.1",
     "gh-pages": "^6.0.0",
     "html-loader": "^4.2.0",
