@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,18 +10,6 @@ module.exports = {
       inject: 'body',
     }),
     new MiniCssExtractPlugin(),
-    new HtmlWebpackInjectPreload({
-      files: [
-        {
-          match: /.*\.woff2$/,
-          attributes: { as: 'font', type: 'font/woff2', crossorigin: true },
-        },
-        {
-          match: /.*\.woff$/,
-          attributes: { as: 'font', type: 'font/woff', crossorigin: true },
-        },
-      ],
-    }),
   ],
   module: {
     rules: [

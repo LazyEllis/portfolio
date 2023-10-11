@@ -4,12 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emmanuel Danison | Web Developer</title>
+    <link
+      rel="preload"
+      href="./assets/fonts/urw_din_arabic_cond_medium-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/urw_din_arabic_cond_medium-webfont.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/urw_din_arabic_medium-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/urw_din_arabic_medium-webfont.woff"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
     <div class="header">
-      <div class="logo">ED</div>
       <ul class="navbar">
-        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="#top" class="nav-link active">Home</a>
+        </li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         <li class="nav-item">
           <a href="#projects" class="nav-link">Projects</a>
@@ -19,22 +48,15 @@
         </li>
       </ul>
     </div>
-    <div class="hero" id="home">
+    <div class="hero">
       <p class="small-text">Hi, my name is</p>
       <h1>Emmanuel Danison.</h1>
-      <p class="subtitle">I'm an web developer.</p>
-      <a href="#about">Learn More</a>
+      <p class="subtitle">I'm a web developer.</p>
+      <a href="#about" class="hero-link">Learn More!</a>
     </div>
-    <div class="about" id="about">
+    <div class="about section" id="about">
       <h2>About</h2>
-      <hr />
       <div class="profile">
-        <div class="about-image">
-          <img
-            src="./assets/img/profile.svg"
-            alt="My Developer Profile Image"
-          />
-        </div>
         <div class="about-text">
           <p>
             I'm a passionate web developer driven by creativity and precision.
@@ -54,29 +76,27 @@
           </p>
         </div>
       </div>
-      <div class="tools"></div>
     </div>
-    <div class="project-section" id="projects">
+    <div class="project-section section" id="projects">
       <h2>Projects</h2>
-      <hr />
       <div class="projects">
         <div class="project">
-          <div class="project-page">
+          <div class="project-image">
             <img
               src="./assets/img/donut-delights.webp"
               alt="My donut delight project"
             />
           </div>
           <div class="project-details">
-            <h3 class="project-name">Donut Delights</h3>
+            <h3 class="project-title">Donut Delights</h3>
             <div class="project-info">
-              <div class="project-description">
+              <p class="project-description">
                 A web application for a delightful donut shop, showcasing a
                 menu, contact information, and more.
-              </div>
-              <div class="project-tech-stack">
+              </p>
+              <p class="project-tech-stack">
                 Built using HTML, CSS (Sass), JavaScript, Webpack and gh-pages.
-              </div>
+              </p>
               <ul class="project-links">
                 <li class="link-item">
                   <a
@@ -86,6 +106,7 @@
                     rel="nooperner norefferer"
                     >Live Site
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -98,6 +119,7 @@
                     rel="nooperner norefferer"
                     >GitHub
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -107,19 +129,19 @@
           </div>
         </div>
         <div class="project">
-          <div class="project-page">
+          <div class="project-image">
             <img src="./assets/img/library.webp" alt="My Library App Project" />
           </div>
           <div class="project-details">
-            <h3 class="project-name">Simple Library App</h3>
+            <h3 class="project-title">Simple Library App</h3>
             <div class="project-info">
-              <div class="project-description">
+              <p class="project-description">
                 A simple library app that allows you to add books to a list and
                 mark them as read or not read.
-              </div>
-              <div class="project-tech-stack">
+              </p>
+              <p class="project-tech-stack">
                 Built using HTML, CSS (Sass) and JavaScript.
-              </div>
+              </p>
               <ul class="project-links">
                 <li class="link-item">
                   <a
@@ -129,6 +151,7 @@
                     rel="nooperner norefferer"
                     >Live Site
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -141,6 +164,7 @@
                     rel="nooperner norefferer"
                     >GitHub
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -150,22 +174,22 @@
           </div>
         </div>
         <div class="project">
-          <div class="project-page">
+          <div class="project-image">
             <img
               src="./assets/img/tic-tac-toe.webp"
               alt="My Tic-Tac-Toe Project"
             />
           </div>
           <div class="project-details">
-            <h3 class="project-name">Tic-Tac-Toe Game</h3>
+            <h3 class="project-title">Tic-Tac-Toe Game</h3>
             <div class="project-info">
-              <div class="project-description">
+              <p class="project-description">
                 An interactive Tic-Tac-Toe game with a clean design and
                 responsive layout.
-              </div>
-              <div class="project-tech-stack">
+              </p>
+              <p class="project-tech-stack">
                 Built using HTML, CSS (Sass) and JavaScript.
-              </div>
+              </p>
               <ul class="project-links">
                 <li class="link-item">
                   <a
@@ -175,6 +199,7 @@
                     rel="nooperner norefferer"
                     >Live Site
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -187,6 +212,7 @@
                     rel="nooperner norefferer"
                     >GitHub
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -196,22 +222,22 @@
           </div>
         </div>
         <div class="project">
-          <div class="project-page">
+          <div class="project-image">
             <img
               src="./assets/img/calculator.webp"
               alt="My Calculator Project"
             />
           </div>
           <div class="project-details">
-            <h3 class="project-name">Calculator</h3>
+            <h3 class="project-title">Calculator</h3>
             <div class="project-info">
-              <div class="project-description">
+              <p class="project-description">
                 A simple web-based calculator supporting keyboard input for
                 enhanced usability.
-              </div>
-              <div class="project-tech-stack">
+              </p>
+              <p class="project-tech-stack">
                 Built using HTML, CSS and JavaScript.
-              </div>
+              </p>
               <ul class="project-links">
                 <li class="link-item">
                   <a
@@ -221,6 +247,7 @@
                     rel="nooperner norefferer"
                     >Live Site
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -233,6 +260,7 @@
                     rel="nooperner norefferer"
                     >GitHub
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -242,21 +270,21 @@
           </div>
         </div>
         <div class="project">
-          <div class="project-page">
+          <div class="project-image">
             <img
               src="./assets/img/rock-paper-scissors.webp"
               alt="My Rock-Paper-Scissors Project"
             />
           </div>
           <div class="project-details">
-            <h3 class="project-name">Rock Paper Scissors Game</h3>
+            <h3 class="project-title">Rock Paper Scissors Game</h3>
             <div class="project-info">
-              <div class="project-description">
+              <p class="project-description">
                 A simple web-based Rock Paper Scissors game.
-              </div>
-              <div class="project-tech-stack">
+              </p>
+              <p class="project-tech-stack">
                 Built with HTML, CSS and JavaScript.
-              </div>
+              </p>
               <ul class="project-links">
                 <li class="link-item">
                   <a
@@ -266,6 +294,7 @@
                     rel="nooperner norefferer"
                     >Live Site
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -278,6 +307,7 @@
                     rel="nooperner norefferer"
                     >GitHub
                     <img
+                      class="icon"
                       src="./assets/img/link.svg"
                       alt="A symbol representing an external link"
                   /></a>
@@ -288,42 +318,25 @@
         </div>
       </div>
     </div>
-    <div class="contact" id="contact">
+    <div class="contact section" id="contact">
       <h2>Contact</h2>
-      <hr />
-      <div>
+      <div class="form-container">
         <p>If you want to discuss anything, you can drop a message below.</p>
-        <form>
-          <div class="form-section">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              required
-            />
+        <form class="contact-form">
+          <div class="form-section form-input-section">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-section form-input-section">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-section form-input-section">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" required></textarea>
           </div>
           <div class="form-section">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div class="form-section">
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              placeholder="Message"
-              required
-            ></textarea>
-          </div>
-          <div class="form-section">
-            <button type="submit">Send</button>
+            <button class="submit-button" type="submit">Send</button>
           </div>
         </form>
       </div>
@@ -332,7 +345,10 @@
       <ul class="contact-link-bar">
         <li class="list-item">
           <a href="mailto:danisonemma&gmail.com" class="contact-link"
-            ><img src="./assets/img/email.svg" alt="A link to my email"
+            ><img
+              class="icon"
+              src="./assets/img/email.svg"
+              alt="A link to my email"
           /></a>
         </li>
         <li class="list-item">
@@ -343,6 +359,7 @@
             class="contact-link"
           >
             <img
+              class="icon"
               src="./assets/img/github.svg"
               alt="A link to my GitHub profile"
             />
@@ -354,7 +371,10 @@
             class="contact-link"
             target="_blank"
             rel="nooperner norefferer"
-            ><img src="./assets/img/linkedin.svg" alt="A link to my LinkedIn"
+            ><img
+              class="icon"
+              src="./assets/img/linkedin.svg"
+              alt="A link to my LinkedIn"
           /></a>
         </li>
       </ul>

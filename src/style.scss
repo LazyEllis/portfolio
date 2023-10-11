@@ -1,0 +1,327 @@
+@font-face {
+  font-family: "URW DIN Arabic Medium Regular";
+  src: url("./assets/fonts/urw_din_arabic_medium-webfont.woff2") format("woff2"),
+    format("woff2"),
+    url("./assets/fonts/urw_din_arabic_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "URW DIN Arabic Cond Medium Regular";
+  src: url("./assets/fonts/urw_din_arabic_cond_medium-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/urw_din_arabic_cond_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$primary-bg-color: #1a2d41;
+$secondary-bg-color: #1e2129;
+$tertiary-bg-color: #f6eddb;
+
+$primary-text-color: #b8bcc2;
+$secondary-text-color: #f6eddb;
+$tertiary-text-color: #292e4c;
+
+$primary-border-color: #f6eddb;
+$secondary-border-color: #f06405;
+
+$primary-icon-color: invert(93%) sepia(15%) saturate(229%) hue-rotate(353deg)
+  brightness(101%) contrast(93%);
+$secondary-icon-color: invert(13%) sepia(11%) saturate(4579%) hue-rotate(200deg)
+  brightness(89%) contrast(83%);
+
+@mixin navbar-hover {
+  background-color: $tertiary-bg-color;
+  color: $tertiary-text-color;
+}
+
+@mixin icon-colors {
+  img {
+    filter: $primary-icon-color;
+    transition: filter 0.3s ease-in-out;
+  }
+
+  &:hover {
+    img {
+      filter: $secondary-icon-color;
+    }
+  }
+}
+
+:root {
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "URW DIN Arabic Medium Regular", sans-serif;
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+}
+
+ul,
+body,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: $secondary-text-color;
+}
+
+h2,
+a,
+button {
+  font-size: 1.25rem;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: $primary-text-color;
+  font-family: "URW DIN Arabic Cond Medium Regular", sans-serif;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  padding: 8px 30px;
+  background-color: $secondary-bg-color;
+  display: block;
+
+  &:hover {
+    @include navbar-hover;
+  }
+}
+
+h2 {
+  margin: 30px 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.icon {
+  height: 0.9rem;
+  width: auto;
+}
+
+.project-link,
+.hero-link,
+button {
+  border: 1px solid $tertiary-bg-color;
+  color: $secondary-text-color;
+}
+
+.section,
+.hero {
+  padding: 0 105px;
+}
+
+.section {
+  padding-top: 49px;
+}
+
+.header {
+  top: 0;
+  position: sticky;
+  z-index: 1;
+
+  .navbar {
+    display: flex;
+    background-color: $secondary-bg-color;
+
+    .nav-link {
+      display: block;
+      text-transform: uppercase;
+
+      &.active {
+        color: $secondary-text-color;
+        padding-bottom: 4px;
+        border-bottom: 4px solid $secondary-border-color;
+
+        &:hover {
+          @include navbar-hover;
+          padding-bottom: 8px;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  height: calc(100vh - 49px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+
+  .small-text {
+    color: $secondary-border-color;
+  }
+
+  h1,
+  .subtitle {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .hero-link {
+    align-self: flex-start;
+  }
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .project-image {
+      align-self: center;
+
+      img {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .project-details {
+      background-color: $secondary-bg-color;
+      padding: 20px;
+
+      .project-title {
+        font-size: 2rem;
+      }
+
+      .project-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .project-tech-stack {
+          font-style: italic;
+        }
+
+        .project-links {
+          display: flex;
+          gap: 15px;
+
+          .project-link {
+            @include icon-colors;
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(odd) {
+      .project-image {
+        order: 2;
+      }
+    }
+  }
+}
+
+.contact {
+  margin-bottom: 31px;
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+
+      .form-section {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 18px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &.form-input-section:focus-within {
+          @include navbar-hover;
+
+          input,
+          textarea {
+            background-color: $secondary-border-color;
+            color: black;
+          }
+        }
+
+        input,
+        textarea {
+          padding: 8px;
+          border: none;
+          outline: none;
+          background-color: $secondary-bg-color;
+          color: $primary-text-color;
+          font-family: inherit;
+          font-size: inherit;
+        }
+
+        textarea {
+          resize: none;
+          height: 200px;
+        }
+      }
+
+      .submit-button {
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $secondary-bg-color;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .contact-link-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact-link {
+      @include icon-colors;
+
+      .icon {
+        height: 1.25rem;
+      }
+    }
+  }
+}
