@@ -1,8 +1,8 @@
 {
-  "name": "it-portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A web development portfolio showcasing projects and skills.",
+  "main": "src/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --mode development --watch",
